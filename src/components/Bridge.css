@@ -1,0 +1,13 @@
+.running {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(0, 0); }
+    40% { transform: translate(0, -90px); }
+    70% { transform: translate(0, -90px); }
+    100% { transform: rotate(0, 0); }
+}
