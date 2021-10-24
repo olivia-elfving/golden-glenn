@@ -1,13 +1,31 @@
-.running {
-    transform-box: fill-box;
-    transform-origin: 50% 50%;
-    animation: spin 15s linear infinite;
+.bridge {
+    max-width: 400px;
 }
 
-@keyframes spin {
-    0% { transform: translate(0, 0); }
-    20% { transform: translate(0, 0); }
+.raise {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: raise 10s linear forwards;
+}
+
+.lower {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: lower 10s linear forwards;
+}
+
+@keyframes raise {
+    0% { transform: translate(0, -30px); }
+    20% { transform: translate(0, -30px); }
     40% { transform: translate(0, -90px); }
     70% { transform: translate(0, -90px); }
-    100% { transform: rotate(0, 0); }
+    100% { transform: translate(0, -90px); }
+}
+
+@keyframes lower {
+    0% { transform: translate(0, -30px); }
+    20% { transform: translate(0, -30px); }
+    40% { transform: translate(0, 0); }
+    70% { transform: translate(0, 0); }
+    100% { transform: translate(0, 0); }
 }
