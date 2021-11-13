@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
-import BridgeSvg from './BridgeSvg'
+import BridgeSvg from './BridgeSvg';
+import NextTime from '../helpers/NextTime';
 
 function Bridge() {
 
     const [raise, setRaise] = useState(false);
+    const [nextTime, setNextTime] = useState(null);
 
     useEffect(() => {
         getBridgeStatus();
+        setNextTime(NextTime());
     }, []);
 
     const getBridgeStatus = async () => {
@@ -21,7 +24,10 @@ function Bridge() {
     }
 
     return (
-        <BridgeSvg raise={raise} />
+        <>
+            <BridgeSvg raise={raise} />
+            <p className="bridge__label">Nästa broöppning är {nextTime}</p>
+        </>
     )
 }
 

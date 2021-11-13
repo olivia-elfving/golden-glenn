@@ -2,6 +2,10 @@
     max-width: 400px;
 }
 
+.bridge__foundation, .bridge__moving__part {
+    filter: drop-shadow(0 0 8px #3a3a90);
+}
+
 .raise {
     transform-box: fill-box;
     transform-origin: 50% 50%;
@@ -12,6 +16,12 @@
     transform-box: fill-box;
     transform-origin: 50% 50%;
     animation: lower 10s linear forwards;
+}
+
+.bridge__label {
+    margin-top: 40px;
+    color: #4584b5;
+    text-shadow: 0 0 8px #8383e2;
 }
 
 @keyframes raise {
