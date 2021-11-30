@@ -1,5 +1,17 @@
 .bridge {
-    max-width: 400px;
+    max-width: 80%;
+}
+
+@media screen and (min-width: 768px) {
+    .bridge {
+        max-width: 65%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .bridge {
+        max-width: 50%;
+    }
 }
 
 .bridge__foundation, .bridge__moving__part {
