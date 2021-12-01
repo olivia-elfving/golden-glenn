@@ -2,9 +2,20 @@
     max-width: 80%;
 }
 
+.bridge__label {
+    font-size: 16px;
+    margin-top: 30px;
+    color: #4584b5;
+    text-shadow: 0 0 8px #8383e2;
+}
+
 @media screen and (min-width: 768px) {
     .bridge {
         max-width: 65%;
+    }
+    .bridge__label {
+        font-size: 22px;
+        margin-top: 40px;
     }
 }
 
@@ -28,12 +39,6 @@
     transform-box: fill-box;
     transform-origin: 50% 50%;
     animation: lower 10s linear forwards;
-}
-
-.bridge__label {
-    margin-top: 40px;
-    color: #4584b5;
-    text-shadow: 0 0 8px #8383e2;
 }
 
 @keyframes raise {
