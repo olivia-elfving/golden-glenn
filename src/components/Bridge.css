@@ -3,7 +3,7 @@
 }
 
 .bridge__label {
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 30px;
     color: #4584b5;
     text-shadow: 0 0 8px #8383e2;
@@ -15,7 +15,7 @@
     }
     .bridge__label {
         font-size: 22px;
-        margin-top: 40px;
+        margin-top: 50px;
     }
 }
 
