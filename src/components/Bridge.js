@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import BridgeSvg from './BridgeSvg';
-import nextTime from '../helpers/nextTime';
+import nextOpeningTime from '../helpers/nextOpeningTime';
 
 function Bridge() {
 
@@ -9,7 +9,7 @@ function Bridge() {
 
     useEffect(() => {
         getBridgeStatus();
-        setNextTime(nextTime());
+        setNextTime(nextOpeningTime());
     }, []);
 
     const getBridgeStatus = async () => {

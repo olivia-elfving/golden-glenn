@@ -20,7 +20,7 @@ function timeSort() {
     times.sort();
 }
 
-function nextTime() {  
+function nextOpeningTime() {  
     const now = moment();
     holidayTimes(now);
     timeSort();
@@ -35,4 +35,4 @@ function nextTime() {
     return times[0];
 }
 
-export default nextTime;
+export default nextOpeningTime;
