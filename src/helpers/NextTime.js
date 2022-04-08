@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const times = ["05:35", "09:35", "11.35", "14:35", "18:35", "20:35"];
 
-function HolidayTimes(now) {
+function holidayTimes(now) {
     if (isPublicHoliday() || isWeekend(now)) {
         times.push("07:35", "16:35");
     }
@@ -20,9 +20,9 @@ function timeSort() {
     times.sort();
 }
 
-function NextTime() {  
+function nextTime() {  
     const now = moment();
-    HolidayTimes(now);
+    holidayTimes(now);
     timeSort();
 
     for (let i = 0; i < times.length; i++) {
@@ -35,4 +35,4 @@ function NextTime() {
     return times[0];
 }
 
-export default NextTime;
+export default nextTime;
