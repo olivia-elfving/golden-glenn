@@ -29,6 +29,12 @@
     }
 }
 
+@media screen and (min-width: 1110px) {
+    .bridge {
+        max-width: 600px;
+    }
+}
+
 .bridge__foundation, .bridge__moving__part {
     filter: drop-shadow(0 0 8px #3a3a90);
 }
