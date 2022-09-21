@@ -28,20 +28,19 @@ function Bridge() {
     };
 
     useEffect(() => {
+        const getBridgeStatus = async () => {
+            try {
+                const response = await fetch('https://golden-horde-webhook.onrender.com/');
+                const { status } = await response.json();
+                setStatus(status);
+            }
+            catch(error) {
+                console.info(error);
+            }
+        }
         getBridgeStatus();
         setNextTime(nextOpeningTime());
     }, []);
-
-    const getBridgeStatus = async () => {
-        try {
-            const response = await fetch('https://golden-horde-webhook.onrender.com/');
-            const { status } = await response.json();
-            setStatus(status);
-        }
-        catch(error) {
-            console.info(error);
-        }
-    }
 
     return (
         <>
