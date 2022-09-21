@@ -7,6 +7,26 @@ function Bridge() {
     const [raise, setRaise] = useState(false);
     const [nextTime, setNextTime] = useState(null);
 
+    const ws = new WebSocket('wss://golden-horde-webhook.onrender.com/');
+
+    const setStatus = (status) => {
+        if (status === "Open") {
+            setRaise(false);
+        }
+        else if (status === "Closed") {
+            setRaise(true);
+        }
+    };
+
+    ws.onopen = () => {
+        ws.send("connected")
+    };
+
+    ws.onmessage = (event) => {
+        const { status } = JSON.parse(event.data);
+        setStatus(status);
+    };
+
     useEffect(() => {
         getBridgeStatus();
         setNextTime(nextOpeningTime());
@@ -14,17 +34,12 @@ function Bridge() {
 
     const getBridgeStatus = async () => {
         try {
-            const response = await fetch('https://n400itshfa000002-development-apim.azure-api.net/RoadSignals?subscription-key=ce34027e127f4566b931cdfcc5136f0f');
+            const response = await fetch('https://golden-horde-webhook.onrender.com/');
             const { status } = await response.json();
-            if (status === "Open") {
-                setRaise(false);
-            }
-            else {
-                setRaise(true);
-            }
+            setStatus(status);
         }
         catch(error) {
-            console.info('Bro-api:t har ännu inte släppts. Mer info; https://goteborg.se/wps/portal/start/kommun-o-politik/kommunfakta/oppna-data/oppna-data-soksida/oppna-data-datamangd#esc_entry=458&esc_context=6');
+            console.info(error);
         }
     }
 
