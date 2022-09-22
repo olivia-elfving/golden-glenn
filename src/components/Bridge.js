@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import BridgeSvg from './BridgeSvg';
+import ShipSvg from './ShipSvg';
 import nextOpeningTime from '../helpers/nextOpeningTime';
+import './Bridge.css';
 
 function Bridge() {
 
@@ -44,7 +46,10 @@ function Bridge() {
 
     return (
         <>
-            <BridgeSvg raise={raise} />
+            <div className="bridge__container">    
+                <BridgeSvg raise={raise} />
+                <ShipSvg sail={raise} />
+            </div>
             <p className="bridge__label">Nästa broöppning är {nextTime}</p>
         </>
     )
