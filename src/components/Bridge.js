@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import BridgeSvg from './BridgeSvg';
+import ShipSvg from './ShipSvg';
+import './Bridge.css';
 import nextOpeningTime from '../helpers/nextOpeningTime';
 import WebsocketOnline from './WebsocketOnline';
 
@@ -49,9 +51,13 @@ function Bridge() {
 
     return (
         <>
-            <BridgeSvg raise={raise} />
-            <p className="bridge__label">Nästa broöppning är {nextTime}</p>
             <WebsocketOnline isOnline={isWsOnline} />
+            <div className="bridge__container">    
+                <BridgeSvg raise={raise} />
+                <ShipSvg sail={raise} />
+            </div>
+            <p className="bridge__label">{raise ? "Bridge is now raised" : "Open for traffic"}</p>
+            <p className="bridge__label">Next planned bridge opening is {nextTime}</p>
         </>
     )
 }

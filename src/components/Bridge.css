@@ -1,3 +1,7 @@
+.bridge__container {
+    position: relative;
+}
+
 .bridge {
     max-width: 80%;
 }
@@ -22,6 +26,12 @@
 @media screen and (min-width: 992px) {
     .bridge {
         max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 1110px) {
+    .bridge {
+        max-width: 600px;
     }
 }
 
