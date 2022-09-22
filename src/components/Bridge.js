@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import BridgeSvg from './BridgeSvg';
 import nextOpeningTime from '../helpers/nextOpeningTime';
+import WebsocketOnline from './WebsocketOnline';
+
+const serverUrl = "golden-horde-webhook.onrender.com/";
 
 function Bridge() {
 
+    const [isWsOnline, setIsWsOnline] = useState(false);
     const [raise, setRaise] = useState(false);
     const [nextTime, setNextTime] = useState(null);
 
-    const ws = new WebSocket('wss://golden-horde-webhook.onrender.com/');
+    const ws = new WebSocket(`wss://${serverUrl}`);
 
     const setStatus = (status) => {
         if (status === "Open") {
@@ -19,7 +23,8 @@ function Bridge() {
     };
 
     ws.onopen = () => {
-        ws.send("connected")
+        ws.send("connected");
+        setIsWsOnline(true);
     };
 
     ws.onmessage = (event) => {
@@ -30,7 +35,7 @@ function Bridge() {
     useEffect(() => {
         const getBridgeStatus = async () => {
             try {
-                const response = await fetch('https://golden-horde-webhook.onrender.com/');
+                const response = await fetch(`https://${serverUrl}`);
                 const { status } = await response.json();
                 setStatus(status);
             }
@@ -46,6 +51,7 @@ function Bridge() {
         <>
             <BridgeSvg raise={raise} />
             <p className="bridge__label">Nästa broöppning är {nextTime}</p>
+            <WebsocketOnline isOnline={isWsOnline} />
         </>
     )
 }
