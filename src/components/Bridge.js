@@ -51,7 +51,7 @@ function Bridge() {
                 <ShipSvg sail={raise} />
             </div>
             <p className="bridge__label">{raise ? "Bridge is now raised" : "Open for traffic"}</p>
-            <p className="bridge__label">Nästa broöppning är {nextTime}</p>
+            <p className="bridge__label">Next bridge opening is {nextTime}</p>
         </>
     )
 }
