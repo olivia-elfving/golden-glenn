@@ -30,8 +30,8 @@ function Bridge() {
     };
 
     ws.onmessage = (event) => {
-        const { status } = JSON.parse(event.data);
-        setStatus(status);
+        const { State } = JSON.parse(event.data);
+        setStatus(State);
     };
 
     useEffect(() => {
