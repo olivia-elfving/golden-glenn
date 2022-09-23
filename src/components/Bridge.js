@@ -17,10 +17,10 @@ function Bridge() {
 
     const setStatus = (status) => {
         if (status === "Open") {
-            setRaise(false);
+            setRaise(true);
         }
         else if (status === "Closed") {
-            setRaise(true);
+            setRaise(false);
         }
     };
 
