@@ -25,7 +25,9 @@ function Bridge() {
 
     ws.onopen = () => {
         ws.send("connected");
-        setIsWsOnline(true);
+        setTimeout(() => {
+            setIsWsOnline(true);
+        }, 1000);
     };
 
     ws.onmessage = (event) => {
