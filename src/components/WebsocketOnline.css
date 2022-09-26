@@ -1,8 +1,8 @@
 .lightbeam__container {
     position: absolute;
     top: 10px;
-    right: 43px;
-    transform: skew(-15deg, 5deg) scale(0.6);
+    right: 50px;
+    transform: skew(-15deg, 5deg) scale(0.8);
     opacity: 0.3;
 }
 
