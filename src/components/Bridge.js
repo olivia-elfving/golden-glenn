@@ -8,7 +8,6 @@ import WebsocketOnline from './WebsocketOnline';
 const serverUrl = "golden-horde-webhook.onrender.com/";
 
 function Bridge() {
-
     const [isWsOnline, setIsWsOnline] = useState(false);
     const [raise, setRaise] = useState(false);
     const [nextTime, setNextTime] = useState(null);
