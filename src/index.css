@@ -2,6 +2,9 @@
   --main-color: #3d8dcc;
   --secondary-color: #223a8c;
   --secondary-color-opacity: #223a8c8a;
+  --small-size-screen: 768px;
+  --medium-size-screen: 992px;
+  --large-size-screen: 1110px;
 }
 
 body {
