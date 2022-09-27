@@ -1,6 +1,50 @@
+.online__message__container {
+    position: absolute;
+    top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    animation: animateDown 1s forwards;
+}
+
+.online__message__container--online {
+    animation: animateUp 2.5s forwards;
+}
+
+.online__message__text {
+    color: white;
+    font-size: 12px;
+    background-color: var(--secondary-color-opacity);
+    padding: 5px 10px;
+    border-radius: 13px;
+}
+
+@media screen and (min-width: 768px) {
+    .online__message__container {
+        top: 17px;
+        right: 90px;
+        left: auto;
+        animation: animateLeft 1s forwards;
+    }
+
+    .online__message__container--online {
+        animation: animateRight 2.5s forwards;
+    }
+
+    .online__message__text {
+        font-size: 14px;
+    }
+
+    .online__message__container i {
+        display: none;
+    }
+}
+
 .lightbeam__container {
     position: absolute;
-    top: 10px;
+    top: 12px;
     right: 53px;
     transform: skew(-15deg, 5deg) scale(0.83);
     opacity: 0.3;
@@ -71,4 +115,26 @@
     85% { opacity: 0.5 }
     90% { opacity: 0.3 }
     95% { opacity: 0.6 }
+}
+
+@keyframes animateDown {
+    0% { top: -30px; opacity: 0 }
+    100% { top: 12px; opacity: 1 }
+}
+
+@keyframes animateUp {
+    0% { top: 12px; opacity: 1 }
+    30% { top: 12px; opacity: 1 }
+    100% { top: -30px; opacity: 0 }
+}
+
+@keyframes animateLeft {
+    0% { right: 10px; opacity: 0 }
+    100% { right: 90px; opacity: 1 }
+}
+
+@keyframes animateRight {
+    0% { right: 90px; opacity: 1 }
+    30% { right: 90px; opacity: 1 }
+    100% { right: 10px; opacity: 0 }
 }
