@@ -3,7 +3,7 @@ import './WebsocketOnline.css';
 const WebsocketOnline = ({ isOnline }) => {
     return (
         <>
-            <div className={`online__message__container ${isOnline ? 'online__message__container--online' : ''}`}>
+            <div className={`online__message__container ${isOnline ? 'online__message__container--online' : 'online__message__container--connecting'}`}>
                 <span className='online__message__text'><i className='fal fa-bat'></i> Connecting to bridge...</span>
             </div>
             <div className={`lightbeam__container ${isOnline ? 'lightbeam__container--online' : 'lightbeam__container--connecting'}`}>
