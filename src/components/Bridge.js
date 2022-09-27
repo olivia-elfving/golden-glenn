@@ -6,11 +6,13 @@ import nextOpeningTime from '../helpers/nextOpeningTime';
 import WebsocketOnline from './WebsocketOnline';
 
 const serverUrl = "golden-horde-webhook.onrender.com/";
+const websocketUrl = `wss://${serverUrl}`;
 
 function Bridge() {
     const [isWsOnline, setIsWsOnline] = useState(false);
     const [raise, setRaise] = useState(false);
     const [nextTime, setNextTime] = useState(null);
+    const [webSocket, setWebSocket] = useState(new WebSocket(websocketUrl));
 
     const setStatus = (status) => {
         if (status === "Open") {
@@ -21,34 +23,35 @@ function Bridge() {
         }
     };
 
-    const connect = () => {
-        const ws = new WebSocket(`wss://${serverUrl}`);
-        ws.onopen = function() {
-            ws.send("connected");
+    useEffect(() => {
+        webSocket.onopen = () => {
             setTimeout(() => {
                 setIsWsOnline(true);
             }, 1000);
         };
 
-        ws.onmessage = function(event) {
+        webSocket.onmessage = (event) => {
             const { State } = JSON.parse(event.data);
             setStatus(State);
         };
 
-        ws.onclose = function(e) {
+        webSocket.onclose = () => {
             setIsWsOnline(false);
             setTimeout(() => {
-                connect();
+                setWebSocket(new WebSocket(websocketUrl));
             }, 1000);
         };
 
-        ws.onerror = function(err) {
+        webSocket.onerror = (err) => {
+            console.log('Socket encountered error: ', err.message, 'Closing socket');
             setIsWsOnline(false);
-            ws.close();
+            webSocket.close();
         };
-    }
-      
-    connect();
+
+        return () => {
+            webSocket.close();
+        };
+    }, [webSocket]);
 
     useEffect(() => {
         const getBridgeStatus = async () => {
