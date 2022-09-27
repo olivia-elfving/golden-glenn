@@ -2,6 +2,10 @@ body {
   background-color: rgb(0, 0, 43);
 }
 
+p {
+  margin: 0 auto;
+}
+
 .App {
   text-align: center;
   margin: 0 auto;

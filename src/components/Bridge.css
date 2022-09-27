@@ -4,35 +4,15 @@
 
 .bridge {
     max-width: 80%;
+    margin-bottom: 60px;
 }
 
 .bridge__label {
     font-size: 18px;
-    margin-top: 30px;
+    /*margin-top: 30px;*/
+    margin-bottom: 10px;
     color: #4584b5;
-    text-shadow: 0 0 8px #8383e2;
-}
-
-@media screen and (min-width: 768px) {
-    .bridge {
-        max-width: 65%;
-    }
-    .bridge__label {
-        font-size: 22px;
-        margin-top: 50px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .bridge {
-        max-width: 50%;
-    }
-}
-
-@media screen and (min-width: 1110px) {
-    .bridge {
-        max-width: 600px;
-    }
+    text-shadow: 0 0 8px #8383e284;
 }
 
 .bridge__foundation, .bridge__moving__part {
@@ -49,6 +29,36 @@
     transform-box: fill-box;
     transform-origin: 50% 50%;
     animation: lower 10s linear forwards;
+}
+
+@media screen and (min-width: 768px) {
+    .bridge {
+        max-width: 65%;
+        margin-bottom: 100px;
+    }
+    .bridge__label {
+        font-size: 22px;
+        margin-bottom: 20px;
+        /*margin-top: 50px;*/
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .bridge {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 1110px) {
+    .bridge {
+        max-width: 600px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .bridge__label {
+        text-shadow: 0 0 8px #8383e2;
+    }
 }
 
 @keyframes raise {
