@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import useWebSocket from 'react-use-websocket';
 import BridgeSvg from './BridgeSvg';
 import ShipSvg from './ShipSvg';
 import './Bridge.css';
@@ -12,7 +13,20 @@ function Bridge() {
     const [isWsOnline, setIsWsOnline] = useState(false);
     const [raise, setRaise] = useState(false);
     const [nextTime, setNextTime] = useState(null);
-    const [webSocket, setWebSocket] = useState(new WebSocket(websocketUrl));
+
+    useWebSocket(websocketUrl, {
+        onOpen: () => {
+            setTimeout(() => {
+                setIsWsOnline(true);
+            }, 1000);
+        },
+        onMessage: (message) => {
+            const { State } = JSON.parse(message.data);
+            setStatus(State);
+        },
+        //Will attempt to reconnect on all close events, such as server shutting down
+        shouldReconnect: (closeEvent) => true,
+    });
 
     const setStatus = (status) => {
         if (status === "Open") {
@@ -22,36 +36,6 @@ function Bridge() {
             setRaise(false);
         }
     };
-
-    useEffect(() => {
-        webSocket.onopen = () => {
-            setTimeout(() => {
-                setIsWsOnline(true);
-            }, 1000);
-        };
-
-        webSocket.onmessage = (event) => {
-            const { State } = JSON.parse(event.data);
-            setStatus(State);
-        };
-
-        webSocket.onclose = () => {
-            setIsWsOnline(false);
-            setTimeout(() => {
-                setWebSocket(new WebSocket(websocketUrl));
-            }, 1000);
-        };
-
-        webSocket.onerror = (err) => {
-            console.log('Socket encountered error: ', err.message, 'Closing socket');
-            setIsWsOnline(false);
-            webSocket.close();
-        };
-
-        return () => {
-            webSocket.close();
-        };
-    }, [webSocket]);
 
     useEffect(() => {
         const getBridgeStatus = async () => {
