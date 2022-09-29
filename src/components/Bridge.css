@@ -9,7 +9,6 @@
 
 .bridge__label {
     font-size: 18px;
-    /*margin-top: 30px;*/
     margin-bottom: 10px;
     color: #4584b5;
     text-shadow: 0 0 8px #8383e284;
@@ -19,16 +18,25 @@
     filter: drop-shadow(0 0 8px #3a3a90);
 }
 
-.raise {
+.bridge__foundation.raise, .bridge__moving__part.raise {
+    filter: drop-shadow(0 0 4px #ff8059);
+}
+
+.bridge__moving__part.raise {
     transform-box: fill-box;
     transform-origin: 50% 50%;
     animation: raise 10s linear forwards;
+    fill: #FF3D00;
 }
 
-.lower {
+.bridge__moving__part.lower {
     transform-box: fill-box;
     transform-origin: 50% 50%;
     animation: lower 10s linear forwards;
+}
+
+.bridge__foundation.raise {
+    fill: url('#a');
 }
 
 @media screen and (min-width: 768px) {
@@ -39,7 +47,6 @@
     .bridge__label {
         font-size: 22px;
         margin-bottom: 20px;
-        /*margin-top: 50px;*/
     }
 }
 
@@ -58,6 +65,9 @@
 @media (prefers-color-scheme: dark) {
     .bridge__label {
         text-shadow: 0 0 8px #8383e2;
+    }
+    .bridge__foundation.raise, .bridge__moving__part.raise {
+        filter: drop-shadow(0 0 6px #FF3D00);
     }
 }
 
