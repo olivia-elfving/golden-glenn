@@ -10,6 +10,14 @@
     transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
     -webkit-transition: opacity 1s ease-in-out;
+    z-index: -1;
+    filter: drop-shadow(0 0px 1px #1d8bdf);
+}
+
+.sail {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    animation: sail 12s linear forwards;
 }
 
 @media screen and (min-width: 768px) {
@@ -26,10 +34,10 @@
     }
 }
 
-.sail {
-    transform-box: fill-box;
-    transform-origin: 50% 50%;
-    animation: sail 12s linear forwards;
+@media (prefers-color-scheme: dark) {
+    .ship {
+        filter: drop-shadow(0 0px 2px #1d8bdf);
+    }
 }
 
 @keyframes sail {
