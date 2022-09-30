@@ -69,10 +69,10 @@
 
 @media screen and (orientation: landscape) and (max-device-width: 1000px) {
     .bridge {
-        margin-bottom: 50px;
+        margin-bottom: 35px;
     }
     .bridge__label {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
     }
 }
 
