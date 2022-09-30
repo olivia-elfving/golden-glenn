@@ -33,7 +33,7 @@ function Bridge() {
             setRaise(true);
         }
         else if (status === "Closed") {
-            setRaise(true);
+            setRaise(false);
         }
     };
 
