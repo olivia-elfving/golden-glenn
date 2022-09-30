@@ -17,7 +17,7 @@
 .sail {
     transform-box: fill-box;
     transform-origin: 50% 50%;
-    animation: sail 12s linear forwards;
+    animation: sail 12s linear infinite;
 }
 
 @media screen and (min-width: 768px) {
@@ -42,8 +42,8 @@
 
 @keyframes sail {
     0% { transform: translate(0, 0px); opacity: 0; }
-    10% { transform: translate(0, 0px); opacity: 1; }
-    40% { transform: translate(0, 0px); }
+    30% { transform: translate(0, 0px); opacity: 0; }
+    40% { transform: translate(0, 0px); opacity: 1; }
     50% { transform: scale(1.1) translate(0, 10px); }
     60% { transform: scale(1.2) translate(0, 20px); }
     65% { transform: scale(1.225) translate(0, 25px); opacity: 1; }
