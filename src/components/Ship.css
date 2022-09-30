@@ -20,7 +20,14 @@
     animation: sail 12s linear infinite;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) { 
+    .ship {
+        width: 45px;
+        top: 70px;
+    }
+}
+
+@media screen and (orientation: landscape) and (max-width: 767px) {
     .ship {
         width: 45px;
         top: 70px;
