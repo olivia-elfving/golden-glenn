@@ -5,6 +5,7 @@ import ShipSvg from './ShipSvg';
 import './Bridge.css';
 import nextOpeningTime from '../helpers/nextOpeningTime';
 import WebsocketOnline from './WebsocketOnline';
+import Timer from './Timer';
 
 const serverUrl = "golden-horde-webhook.onrender.com/";
 const websocketUrl = `wss://${serverUrl}`;
@@ -55,6 +56,7 @@ function Bridge() {
     return (
         <>
             <WebsocketOnline isOnline={isWsOnline} />
+            <Timer />
             <div className="bridge__container">    
                 <BridgeSvg raise={raise} />
                 <ShipSvg sail={raise} />
