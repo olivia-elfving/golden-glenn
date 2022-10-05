@@ -21,7 +21,8 @@ function Bridge() {
             }, 1000);
         },
         onMessage: (message) => {
-            const { State } = JSON.parse(message.data);
+            const reponseData = JSON.parse(message.data);
+            const { State } = reponseData[0].data;
             setStatus(State);
         },
         //Will attempt to reconnect on all close events, such as server shutting down
