@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { msToMinSec } from '../helpers/timeConverter';
 
 function Timer() {
-    const [count, setCount] = useState(900000);
+    const [count, setCount] = useState(900000); //900000
     const [countUp, setCountUp] = useState(0);
     
     useEffect(() => {
