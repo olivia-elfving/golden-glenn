@@ -9,53 +9,38 @@ const BridgeSvg = ({ raise }) => (
   >
     <path id="planePath" d="M4.216,164.771L315.118,151.032L552.311,150.887L867.517,165.712" style={{fill: "none" }} />
     <path id="reversePath" d="M867.517,165.712,L552.311,150.887,L315.118,151.032,L4.216,164.771" style={{ fill: "none" }} />
-    <g className={`${raise ? "hide" : ""}`} id="circles" opacity="0">
-      <circle id="plane" class="plane" fill="#275e8a" cx="0" cy="0" r="10"  />
-      <circle id="point-1" class="point-1" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-2" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-3" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="plane-4" class="plane" fill="#275e8a" cx="0" cy="0" r="10"  />
-      <circle id="point-5" class="point-1" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-6" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-7" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-8" class="point-1" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-9" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-10" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-12" class="point-1" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-13" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-      <circle id="point-14" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-    </g>
     <g className={`${raise ? "hide" : ""}`} id="reverse_circles" opacity="0">
-      <circle id="reverse_plane" fill="#3379af" cx="0" cy="0" r="10"  />
-      <circle id="reverse_point-1" class="point-1" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-2" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-3" class="point-3" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-4" class="point-1" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-5" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-6" class="point-3" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-7" class="point-1" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-8" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-9" class="point-3" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-10" class="point-1" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-11" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
-      <circle id="reverse_point-12" class="point-3" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="reverse_plane" fill="#275e8a" cx="0" cy="0" r="10"  />
+      <circle id="reverse_point-1" class="point-1" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-2" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-3" class="point-3" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-4" class="point-1" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-5" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-6" class="point-3" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-7" class="point-1" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-8" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-9" class="point-3" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-10" class="point-1" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-11" class="point-2" fill="#275e8a" cx="0" cy="0" r="10" />
+      <circle id="reverse_point-12" class="point-3" fill="#275e8a" cx="0" cy="0" r="10" />
     </g>
-    <g id="ghosts" opacity="0">
-      <circle id="plane" class="plane" fill="black" cx="0" cy="0" />
-      <circle id="point-1" fill="#275e8a" cx="0" cy="0" />
-      <circle id="point-2" fill="#275e8a" cx="0" cy="0" />
-      <circle id="point-3" fill="black" cx="0" cy="0" />
-      <circle id="plane-4" fill="#275e8a" cx="0" cy="0"  />
-      <circle id="point-5" fill="#275e8a" cx="0" cy="0" />
-      <circle id="point-6" fill="#275e8a" cx="0" cy="0" />
-      <circle id="point-7" fill="black" cx="0" cy="0" />
-      <circle id="point-8" fill="#275e8a" cx="0" cy="0" />
-      <circle id="point-9" fill="#275e8a" cx="0" cy="0" />
-      <circle id="point-10" fill="black" cx="0" cy="0" />
-      <circle id="point-12" fill="#275e8a" cx="0" cy="0" />
-      <circle id="point-13" fill="#275e8a" cx="0" cy="0" />
-      <circle id="point-14" fill="black" cx="0" cy="0" />
+    <g className={`${raise ? "hide" : ""}`} id="circles" opacity="0">
+      <circle id="plane" class="plane" fill="#3379af" cx="0" cy="0" r="10"  />
+      <circle id="point-1" class="point-1" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-2" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-3" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="plane-4" class="plane" fill="#3379af" cx="0" cy="0" r="10"  />
+      <circle id="point-5" class="point-1" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-6" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-7" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-8" class="point-1" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-9" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-10" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-12" class="point-1" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-13" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
+      <circle id="point-14" class="point-2" fill="#3379af" cx="0" cy="0" r="10" />
     </g>
+
 
     <animateMotion xlinkHref="#plane" dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
