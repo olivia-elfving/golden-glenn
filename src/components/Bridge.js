@@ -22,7 +22,7 @@ function Bridge() {
         },
         onMessage: (message) => {
             const reponseData = JSON.parse(message.data);
-            const { State } = reponseData[0].data;
+            const { State } = reponseData.data;
             setStatus(State);
         },
         //Will attempt to reconnect on all close events, such as server shutting down
