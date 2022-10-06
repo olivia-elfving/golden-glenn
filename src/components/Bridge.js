@@ -34,9 +34,7 @@ function Bridge() {
             setRaise(true);
         }
         else if (status === "Closed") {
-            setTimeout(() => {
-                setRaise(true);
-            }, 10000)
+            setRaise(false);
         }
     };
 
