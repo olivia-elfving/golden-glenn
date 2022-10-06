@@ -39,6 +39,10 @@
     fill: url('#a');
 }
 
+.hide circle {
+    fill: none;
+}
+
 @media screen and (min-width: 400px) {
     .bridge {
         margin-bottom: 100px;

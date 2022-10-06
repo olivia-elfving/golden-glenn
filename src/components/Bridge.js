@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import useWebSocket from 'react-use-websocket';
 import BridgeSvg from './BridgeSvg';
-import BridgeSVGTest from './BridgeSVGTest';
 import ShipSvg from './ShipSvg';
 import './Bridge.css';
 import nextOpeningTime from '../helpers/nextOpeningTime';
@@ -35,7 +34,9 @@ function Bridge() {
             setRaise(true);
         }
         else if (status === "Closed") {
-            setRaise(false);
+            setTimeout(() => {
+                setRaise(true);
+            }, 10000)
         }
     };
 
@@ -61,7 +62,6 @@ function Bridge() {
                 <BridgeSvg raise={raise} />
                 <ShipSvg sail={raise} />
             </div>
-            <BridgeSVGTest />
             <p className="bridge__label">{raise ? "Pågående broöppning" : "Öppen för trafik"}</p>
             <p className="bridge__label">Nästa planerade broöpping är {nextTime}</p>
         </>
