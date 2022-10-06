@@ -1,13 +1,22 @@
 import React from 'react';
 import './Bridge.css';
 
-const BridgeSvg = ({ raise }) => (
-    <svg
-      viewBox="4.604 87.985 869.728 212.589"
-      xmlns="http://www.w3.org/2000/svg"
-      className="bridge"
-    >
-          <path id="planePath" d="M4.216,164.771L315.118,151.032L552.311,150.887L867.517,165.712" style={{fill: "none" }} />
+const BridgeSVGTest = (props) => (
+  <svg
+    viewBox="0 0 870 213"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    xmlSpace="preserve"
+    style={{
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      strokeLinejoin: "round",
+      strokeMiterlimit: 2,
+    }}
+    {...props}
+  >
+
+    <path id="planePath" d="M4.216,164.771L315.118,151.032L552.311,150.887L867.517,165.712" style={{fill: "none" }} />
     <path id="reversePath" d="M867.517,165.712,L552.311,150.887,L315.118,151.032,L4.216,164.771" style={{ fill: "none" }} />
     <g id="circles" opacity="0">
         <circle id="plane" class="plane" fill="black" cx="0" cy="0" r="10"  />
@@ -90,7 +99,7 @@ const BridgeSvg = ({ raise }) => (
 
     <animate attributeName="opacity"
         xlinkHref="#circles"
-        values="0; 1;" dur="1s" begin="10"
+        values="0; 1;" dur="1s" begin="4"
         data-id="circles"
         repeatCount="1"
         fill="freeze"
@@ -138,41 +147,29 @@ const BridgeSvg = ({ raise }) => (
 
     <animate attributeName="opacity"
         xlinkHref="#reverse_circles"
-        values="0; 1;" dur="1s" begin="10"
+        values="0; 1;" dur="1s" begin="4"
         data-id="reverse_circles"
         repeatCount="1"
         fill="freeze"
     />
 
-      <path className={`bridge__moving__part ${raise ? "raise" : "lower"}`} d="M331.975 246.823l213.419-.716v17.612l-213.419.716z" fill="#3d8dcc" />
-      <path className={`bridge__foundation ${raise ? "raise" : "lower"}`} d="M12.61 271.677l292.66 1.207 9.08 27.584 24.681-.273 5.975-37.299-6.04-13.815-1.245-114.679 7.186-1.16-7.9-45.257-9.287.602-22.429 158.697L4.604 259.521l8.006 12.156zM866.326 271.783l-292.66 1.207-9.08 27.584-24.681-.273-5.975-37.299 6.04-13.815 1.245-114.679-7.186-1.16 7.901-45.257 9.286.602 22.429 158.697 300.687 12.237-8.006 12.156z" fill={raise ? "url('#a')" : "#3d8dcc"} />
-      <defs>
-        <linearGradient
-        id="a"
-        x1={0}
-        y1={0}
-        x2={1}
-        y2={0}
-        gradientUnits="userSpaceOnUse"
-        gradientTransform="matrix(-.41377 170.135 -169.481 -.41537 459.949 129)"
-      >
-        <stop
-          offset={0}
-          style={{
-            stopColor: "#ff7d00",
-            stopOpacity: 1,
-          }}
-        />
-        <stop
-          offset={1}
-          style={{
-            stopColor: "#ff2500",
-            stopOpacity: 1,
-          }}
-        />
-      </linearGradient>
-      </defs>
-    </svg>
+    <path
+      d="m331.975 246.823 213.419-.716v17.612l-213.419.716v-17.612Z"
+      style={{
+        fill: "#3d8dcc",
+        fillRule: "nonzero",
+      }}
+      transform="translate(-4.604 -87.985)"
+    />
+    <path
+      d="m12.61 271.677 292.66 1.207 9.08 27.584 24.681-.273 5.975-37.299-6.04-13.815-1.245-114.679 7.186-1.16-7.9-45.257-9.287.602-22.429 158.697L4.604 259.521l8.006 12.156Zm853.716.106-292.66 1.207-9.08 27.584-24.681-.273-5.975-37.299 6.04-13.815 1.245-114.679-7.186-1.16 7.901-45.257 9.286.602 22.429 158.697 300.687 12.237-8.006 12.156Z"
+      style={{
+        fill: "#3d8dcc",
+        fillRule: "nonzero",
+      }}
+      transform="translate(-4.604 -87.985)"
+    />
+  </svg>
 )
 
-export default BridgeSvg;
+export default BridgeSVGTest;
