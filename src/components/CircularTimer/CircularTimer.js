@@ -4,7 +4,9 @@ import './CircularTimer.css';
 function CircularTimer() {
     return (
         <>
-            <div className="counterCircle" role="progressbar"></div>
+            <div className="counterCircle__container">
+                <div className="counterCircle" role="progressbar"></div>
+            </div> 
         </>
     )
 }

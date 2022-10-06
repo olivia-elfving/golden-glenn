@@ -2,9 +2,14 @@
 
 }*/
 
+.counterCircle__container {
+    position: absolute;
+    left: 100px;
+}
+
 .counterCircle {
     --size: 2rem;
-    --fg: red; /*#369*/
+    --fg: #ff6a00;/*#369*/
     --bg: #def;
     --value: 80;
     --pgPercentage: var(--value);
@@ -16,7 +21,7 @@
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
-    background: radial-gradient(closest-side, white 70%, transparent 0 99.9%), 
+    background: radial-gradient(closest-side, rgb(0, 0, 43) 70%, transparent 0 99.9%), 
     conic-gradient(var(--fg) calc((var(--pgPercentage))* 1%), var(--bg) 0);
     /*animation: growProgressBar 3s 1 forwards; Kopplad till growProgressBar, som är tom */
 }

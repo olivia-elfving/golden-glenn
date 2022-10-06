@@ -4,7 +4,7 @@ import { msToMinSec } from '../helpers/timeConverter';
 import CircularTimer from '../components/CircularTimer/CircularTimer';
 
 function Timer() {
-    const [count, setCount] = useState(900000); //900000
+    const [count, setCount] = useState(4000); //900000
     const [countUp, setCountUp] = useState(0);
     
     useEffect(() => {
@@ -31,9 +31,8 @@ function Timer() {
 
     return (
         <>  
-            <CircularTimer />
             {count > 0 && <p className="bridge__label">Tid till broöppning: {msToMinSec(count)}</p>}
-            {count === 0 && <p className="bridge__label">Tid bron vart öppen: {msToMinSec(countUp)}</p>}
+            {count === 0 && <p className="bridge__label"><CircularTimer />Tid bron vart öppen: {msToMinSec(countUp)}</p>}
         </>
     )  
 }
