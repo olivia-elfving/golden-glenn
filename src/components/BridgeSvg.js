@@ -54,10 +54,10 @@ const BridgeSvg = ({ raise }) => (
     <animateMotion xlinkHref="#point-3" dur="10s" begin="1.5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#plane-4" dur="10s" begin="12s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#plane-4" dur="10s" begin="4.5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#point-5" dur="9.5s" begin="11s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-5" dur="9.5s" begin="4s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
     <animateMotion xlinkHref="#point-6" dur="9s" begin="2.5s" repeatCount="indefinite" rotate="auto">
