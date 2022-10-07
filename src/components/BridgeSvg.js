@@ -91,7 +91,7 @@ const BridgeSvg = ({ raise }) => (
 
     <animate attributeName="opacity"
         xlinkHref="#circles"
-        values="0; 1;" dur="1s" begin="10"
+        values="0; 1;" dur="1s" begin="14"
         data-id="circles"
         repeatCount="1"
         fill="freeze"
@@ -135,11 +135,11 @@ const BridgeSvg = ({ raise }) => (
     </animateMotion>
     <animateMotion xlinkHref="#reverse_point-12" dur="12.5s" begin="13.6s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#reversePath" />
-    </animateMotion> 
+    </animateMotion>
 
     <animate attributeName="opacity"
         xlinkHref="#reverse_circles"
-        values="0; 1;" dur="1s" begin="10"
+        values="0; 1;" dur="1s" begin="14"
         data-id="reverse_circles"
         repeatCount="1"
         fill="freeze"
