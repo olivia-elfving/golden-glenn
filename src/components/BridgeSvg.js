@@ -67,7 +67,7 @@ const BridgeSvg = ({ raise }) => (
         <mpath xlinkHref="#planePath" />
     </animateMotion>
 
-    <animateMotion xlinkHref="#point-8" dur="10s" begin="4s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-8" dur="11s" begin="4s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
     <animateMotion xlinkHref="#point-9" dur="9.5s" begin="5.3s" repeatCount="indefinite" rotate="auto">
@@ -79,13 +79,13 @@ const BridgeSvg = ({ raise }) => (
     <animateMotion xlinkHref="#point-11" dur="10s" begin="5.5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#point-12" dur="10s" begin="4.7s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-12" dur="9.7s" begin="4.7s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#point-13" dur="10s" begin="5s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-13" dur="12s" begin="5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#point-14" dur="10s" begin="5.5s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-14" dur="9s" begin="5.5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
 
