@@ -76,22 +76,22 @@ const BridgeSvg = ({ raise }) => (
     <animateMotion xlinkHref="#point-10" dur="9s" begin="5.5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#point-11" dur="10s" begin="9.5s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-11" dur="10s" begin="5.5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#point-12" dur="10s" begin="10.7s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-12" dur="10s" begin="4.7s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#point-13" dur="10s" begin="9s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-13" dur="10s" begin="5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#point-14" dur="10s" begin="8.5s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#point-14" dur="10s" begin="5.5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#planePath" />
     </animateMotion>
 
     <animate attributeName="opacity"
         xlinkHref="#circles"
-        values="0; 1;" dur="1s" begin="14"
+        values="0; 1;" dur="1s" begin="6"
         data-id="circles"
         repeatCount="1"
         fill="freeze"
@@ -124,22 +124,22 @@ const BridgeSvg = ({ raise }) => (
     <animateMotion xlinkHref="#reverse_point-8" dur="11s" begin="5.6s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#reversePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#reverse_point-9" dur="12.5s" begin="8.9s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#reverse_point-9" dur="12.5s" begin="4.9s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#reversePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#reverse_point-10" dur="12s" begin="10.1s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#reverse_point-10" dur="12s" begin="2.1s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#reversePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#reverse_point-11" dur="12.7s" begin="12.5s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#reverse_point-11" dur="12.7s" begin="4.5s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#reversePath" />
     </animateMotion>
-    <animateMotion xlinkHref="#reverse_point-12" dur="12.5s" begin="13.6s" repeatCount="indefinite" rotate="auto">
+    <animateMotion xlinkHref="#reverse_point-12" dur="12.5s" begin="5.6s" repeatCount="indefinite" rotate="auto">
         <mpath xlinkHref="#reversePath" />
     </animateMotion>
 
     <animate attributeName="opacity"
         xlinkHref="#reverse_circles"
-        values="0; 1;" dur="1s" begin="14"
+        values="0; 1;" dur="1s" begin="6"
         data-id="reverse_circles"
         repeatCount="1"
         fill="freeze"
