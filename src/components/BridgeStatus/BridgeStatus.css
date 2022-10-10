@@ -16,3 +16,9 @@
     color: #4294d2;
     text-shadow: 0 0 2px #8383e2;
 }
+
+@media screen and (orientation: landscape) and (max-device-width: 1000px) {
+    .bridge__status {
+        margin-bottom: 40px;
+    }
+}
