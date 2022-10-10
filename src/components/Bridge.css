@@ -10,7 +10,7 @@
 .bridge__label {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #4584b5;
+    color: #4789ca;
     text-shadow: 0 0 8px #8383e284;
 }
 
@@ -82,7 +82,7 @@
 
 @media (prefers-color-scheme: dark) {
     .bridge__label {
-        text-shadow: 0 0 8px #8383e2;
+        text-shadow: 0 0 8px #8383e2c7;
     }
     .bridge__foundation.raise, .bridge__moving__part.raise {
         filter: drop-shadow(0 0 6px #FF3D00);

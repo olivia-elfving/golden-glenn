@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react';
 import useWebSocket from 'react-use-websocket';
 import BridgeSvg from './BridgeSvg';
 import ShipSvg from './ShipSvg';
-import './Bridge.css';
+import BridgeStatus from './BridgeStatus/BridgeStatus';
 import nextOpeningTime from '../helpers/nextOpeningTime';
 import WebsocketOnline from './WebsocketOnline';
+import './Bridge.css';
 
 const serverUrl = "golden-horde-webhook.onrender.com/";
 const websocketUrl = `wss://${serverUrl}`;
@@ -56,11 +57,11 @@ function Bridge() {
     return (
         <>
             <WebsocketOnline isOnline={isWsOnline} />
+            <BridgeStatus raise={raise} />
             <div className="bridge__container">    
                 <BridgeSvg raise={raise} />
                 <ShipSvg sail={raise} />
             </div>
-            <p className="bridge__label">{raise ? "Pågående broöppning" : "Öppen för trafik"}</p>
             <p className="bridge__label">Nästa planerade broöpping är {nextTime}</p>
         </>
     )
