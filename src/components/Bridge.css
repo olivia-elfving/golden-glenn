@@ -91,7 +91,7 @@
 
 @media screen and (orientation: landscape) and (max-device-width: 1300px) {
     .bridge__label {
-        font-size: 25px;
+        font-size: 20px;
     }
 }
 
