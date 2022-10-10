@@ -13,8 +13,14 @@ p {
   margin-top: 30vh;
 }
 
-@media (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-device-width: 700px) {
   .App {
     margin-top: 5vh;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-device-width: 1000px) {
+  .App {
+    margin-top: 10vh;
   }
 }
