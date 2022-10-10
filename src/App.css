@@ -15,6 +15,6 @@ p {
 
 @media (orientation: landscape) {
   .App {
-    margin-top: 10vh;
+    margin-top: 5vh;
   }
 }
