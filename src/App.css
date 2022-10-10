@@ -10,5 +10,11 @@ p {
   text-align: center;
   margin: 0 auto;
   width: 100%;
-  margin-top: 35vh;
+  margin-top: 30vh;
+}
+
+@media (orientation: landscape) {
+  .App {
+    margin-top: 10vh;
+  }
 }
