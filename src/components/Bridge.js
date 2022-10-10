@@ -18,7 +18,7 @@ function Bridge() {
         onOpen: () => {
             setTimeout(() => {
                 setIsWsOnline(true);
-            }, 1000);
+            }, 2000);
         },
         onMessage: (message) => {
             const reponseData = JSON.parse(message.data);
