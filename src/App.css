@@ -13,14 +13,14 @@ p {
   margin-top: 30vh;
 }
 
-@media screen and (orientation: landscape) and (max-device-width: 700px) {
+@media screen and (orientation: landscape) and (max-device-width: 800px) {
   .App {
-    margin-top: 5vh;
+    margin-top: 10vh;
   }
 }
 
 @media screen and (orientation: landscape) and (max-device-width: 1000px) {
   .App {
-    margin-top: 10vh;
+    margin-top: 5vh;
   }
 }
