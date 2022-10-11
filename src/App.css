@@ -10,7 +10,7 @@ p {
   text-align: center;
   margin: 0 auto;
   width: 100%;
-  margin-top: 30vh;
+  margin-top: 25vh;
 }
 
 @media screen and (orientation: landscape) and (max-device-width: 1000px) {
