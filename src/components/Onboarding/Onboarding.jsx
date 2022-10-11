@@ -13,7 +13,6 @@ function Onboarding() {
     useEffect(() => {
         const hasOnboarded = localStorage.getItem("hasOnboarded");
         if (hasOnboarded === "true") {
-            //Visa inte onboardingen
             setHidePopup(true);
         }
     }, []);
@@ -25,7 +24,7 @@ function Onboarding() {
     return (
         <div className="popup">
             <h3>Information</h3>
-            <button className="closePopupBtn" onClick={closeOnboarding}>&times;</button>
+            <span className="closePopupBtn" onClick={closeOnboarding}>&times;</span>
             <p>Tiden för "Nästa planerade broöppning" är baserat på ett förutbestämt schema.</p>
             <p>Tyvärr kan vi inte veta exakt när nästa broöppning är, men du får liveuppdateringar från bron när batsignalen har ett fast lysande sken.</p>
         </div>
