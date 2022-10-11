@@ -5,6 +5,7 @@ import ShipSvg from './ShipSvg';
 import BridgeStatus from './BridgeStatus/BridgeStatus';
 import nextOpeningTime from '../helpers/nextOpeningTime';
 import WebsocketOnline from './WebsocketOnline';
+import Onboarding from './Onboarding/Onboarding';
 import './Bridge.css';
 
 const serverUrl = "golden-horde-webhook.onrender.com/";
@@ -63,6 +64,7 @@ function Bridge() {
                 <ShipSvg sail={raise} />
             </div>
             <p className="bridge__label">Nästa planerade broöpping: {nextTime}</p>
+            <Onboarding />
         </>
     )
 }
