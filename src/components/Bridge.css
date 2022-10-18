@@ -39,6 +39,10 @@
     fill: url('#a');
 }
 
+.ghost-reverse {
+    transform: rotate(180deg);
+}
+
 @media screen and (min-width: 400px) {
     .bridge {
         margin-bottom: 100px;
