@@ -1,0 +1,24 @@
+.bridge__status {
+    font-size: 30px;
+    color: #73a5d7;
+    text-shadow: 0 0 2px #3d8dcca8;
+    margin-bottom: 60px;
+}
+
+.bridge--closed span {
+    color: #45c38f;
+    text-shadow: 0 0 4px #45c38fc4;
+    color: #0b9475;
+    text-shadow: 0 0 4px #10846d;
+}
+
+.bridge--raised {    
+    color: #4294d2;
+    text-shadow: 0 0 2px #8383e2;
+}
+
+@media screen and (max-width: 1000px) {
+    .bridge__status {
+        margin-bottom: 40px;
+    }
+}

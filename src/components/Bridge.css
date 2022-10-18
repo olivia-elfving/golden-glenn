@@ -10,7 +10,7 @@
 .bridge__label {
     font-size: 18px;
     margin-bottom: 10px;
-    color: #4584b5;
+    color: #4789ca;
     text-shadow: 0 0 8px #8383e284;
 }
 
@@ -41,6 +41,10 @@
 
 .ghost-reverse {
     transform: rotate(180deg);
+}
+
+.hide circle {
+    fill: none;
 }
 
 @media screen and (min-width: 400px) {
@@ -82,7 +86,7 @@
 
 @media (prefers-color-scheme: dark) {
     .bridge__label {
-        text-shadow: 0 0 8px #8383e2;
+        text-shadow: 0 0 8px #8383e2c7;
     }
     .bridge__foundation.raise, .bridge__moving__part.raise {
         filter: drop-shadow(0 0 6px #FF3D00);
@@ -91,7 +95,7 @@
 
 @media screen and (orientation: landscape) and (max-device-width: 1300px) {
     .bridge__label {
-        font-size: 25px;
+        font-size: 20px;
     }
 }
 

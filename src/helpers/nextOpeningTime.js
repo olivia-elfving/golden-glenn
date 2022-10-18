@@ -1,4 +1,4 @@
-import { isPublicHoliday} from 'swedish-holidays';
+import { isPublicHoliday } from 'swedish-holidays';
 import moment from 'moment';
 
 const times = ["05:35", "09:35", "11.35", "14:35", "18:35", "20:35"];

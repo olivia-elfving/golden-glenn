@@ -1,0 +1,39 @@
+.popup {
+    position: relative;
+    max-width: 620px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border-radius: 7px;
+    background-color: #3d8dccd1;
+    color: #d4d7d9;
+    text-align: left;
+    line-height: 23px;
+    padding: 10px 14px;
+}
+
+.popup h3 {
+    margin-top: 0;
+}
+
+.popup p:first-of-type {
+    margin-bottom: 15px;
+}
+
+.closePopupBtn {
+    color: #00002b;
+    background: none;
+    font-size: 40px;
+    border: none;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    padding: 0;
+    height: 10px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 660px) {
+    .popup {
+        margin: 0 30px;
+    }
+}

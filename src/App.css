@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(0, 0, 43);
+  background-color: #00002b;
 }
 
 p {
@@ -10,5 +10,17 @@ p {
   text-align: center;
   margin: 0 auto;
   width: 100%;
-  margin-top: 35vh;
+  margin-top: 25vh;
+}
+
+@media screen and (orientation: landscape) and (max-device-width: 1000px) {
+  .App {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-device-width: 800px) {
+  .App {
+    margin-top: 10vh;
+  }
 }
