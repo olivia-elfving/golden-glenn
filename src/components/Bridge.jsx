@@ -63,7 +63,7 @@ function Bridge() {
                 <BridgeSvg raise={raise} />
                 <ShipSvg sail={raise} />
             </div>
-            <p className="bridge__label">Nästa planerade broöpping: {nextTime}</p>
+            <p className="bridge__label">Nästa planerade broöppning: {nextTime}</p>
             <Onboarding />
         </>
     )
