@@ -1,7 +1,7 @@
 import React from 'react';
 import './Bridge.css';
 
-const BridgeSvg = ({ raise }) => (
+const BridgeSvg = ({ raise, isGhostTime }) => (
     <svg
         viewBox="0 0 870 213"
         xmlns="http://www.w3.org/2000/svg"
@@ -9,78 +9,85 @@ const BridgeSvg = ({ raise }) => (
     >
         <path id="planePath" d="M4.216,164.771L315.118,151.032L552.311,150.887L867.517,165.712" style={{fill: "none" }} />
         <path id="reversePath" d="M867.517,165.712,L552.311,150.887,L315.118,151.032,L4.216,164.771" style={{ fill: "none" }} />
-        <g className={`${raise ? "hide" : ""}`} id="reverse_circles" opacity="0">
-            <circle id="reverse_plane" fill="#275e8a" cx="0" cy="0" r="10"  />
-            <circle id="reverse_point-1" fill="#275e8a" cx="0" cy="0" r="10" />
-            <circle id="reverse_point-2" fill="#275e8a" cx="0" cy="0" r="10" />
-            <circle id="reverse_point-3" fill="#275e8a" cx="0" cy="0" r="10" />
-            <circle id="reverse_point-4"  fill="#275e8a" cx="0" cy="0" r="10" />
-            <circle id="reverse_point-5" fill="#275e8a" cx="0" cy="0" r="10" />
-            <circle id="reverse_point-6" fill="#275e8a" cx="0" cy="0" r="10" />
-            <circle id="reverse_point-7"  fill="#275e8a" cx="0" cy="0" r="10" />
-        </g>
-        <g className={`${raise ? "hide" : ""}`} id="circles" opacity="0">
-            <circle id="plane" fill="#3379af" cx="0" cy="0" r="10"  />
-            <circle id="point-1" fill="#3379af" cx="0" cy="0" r="10" />
-            <circle id="point-2" fill="#3379af" cx="0" cy="0" r="10" />
-            <circle id="point-3" fill="#3379af" cx="0" cy="0" r="10" />
-            <circle id="plane-4" fill="#3379af" cx="0" cy="0" r="10"  />
-            <circle id="point-5" fill="#3379af" cx="0" cy="0" r="10" />
-            <circle id="point-6" fill="#3379af" cx="0" cy="0" r="10" />
-            <circle id="point-7" fill="#3379af" cx="0" cy="0" r="10" />
-            <circle id="point-8" fill="#3379af" cx="0" cy="0" r="10" />
-            <circle id="point-9" fill="#3379af" cx="0" cy="0" r="10" />
-        </g>
-        <g id="ghosts" opacity="0">
-            <g id="ghost-point-1">
-                <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-            <g id="ghost-point-2">
-                <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-            <g id="ghost-point-3">
-                <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-            <g id="ghost-point-4">
-                <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-            <g id="ghost-point-5">
-                <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-        </g>
-        <g id="reverse_ghosts" opacity="0">
-            <g id="ghost-reverse_plane"></g>
-            <g id="ghost-reverse_point-1" className="ghost-reverse">
-                <path fill="#3379af" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-            <g id="ghost-reverse_point-2" className="ghost-reverse">
-                <path fill="#3379af" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-            <g id="ghost-reverse_point-3" className="ghost-reverse">
-                <path fill="#3379af" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-            <g id="ghost-reverse_point-4" className="ghost-reverse">
-                <path fill="#3379af" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
-                <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
-                <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
-            </g>
-        </g>
+        <path id="ghost-planePath" d="M1.972,40.922L319.27,27.814L550.275,27.692C550.275,27.692 867.041,44.695 867.487,44.801" fill="none" />
+        <path id="reverseGhost-path" d="M864.337,44.742L547.878,27.942L319.552,27.792L2.105,40.902" fill="none" />
+
+        {!isGhostTime && (
+            <>
+                <g className={`${raise ? "hide" : ""}`} id="reverse_circles" opacity="0">
+                    <circle id="reverse_plane" fill="#275e8a" cx="0" cy="0" r="10"  />
+                    <circle id="reverse_point-1" fill="#275e8a" cx="0" cy="0" r="10" />
+                    <circle id="reverse_point-2" fill="#275e8a" cx="0" cy="0" r="10" />
+                    <circle id="reverse_point-3" fill="#275e8a" cx="0" cy="0" r="10" />
+                    <circle id="reverse_point-4"  fill="#275e8a" cx="0" cy="0" r="10" />
+                    <circle id="reverse_point-5" fill="#275e8a" cx="0" cy="0" r="10" />
+                    <circle id="reverse_point-6" fill="#275e8a" cx="0" cy="0" r="10" />
+                    <circle id="reverse_point-7"  fill="#275e8a" cx="0" cy="0" r="10" />
+                </g>
+                <g className={`${raise ? "hide" : ""}`} id="circles" opacity="0">
+                    <circle id="plane" fill="#3379af" cx="0" cy="0" r="10"  />
+                    <circle id="point-1" fill="#3379af" cx="0" cy="0" r="10" />
+                    <circle id="point-2" fill="#3379af" cx="0" cy="0" r="10" />
+                    <circle id="point-3" fill="#3379af" cx="0" cy="0" r="10" />
+                    <circle id="plane-4" fill="#3379af" cx="0" cy="0" r="10"  />
+                    <circle id="point-5" fill="#3379af" cx="0" cy="0" r="10" />
+                    <circle id="point-6" fill="#3379af" cx="0" cy="0" r="10" />
+                    <circle id="point-7" fill="#3379af" cx="0" cy="0" r="10" />
+                    <circle id="point-8" fill="#3379af" cx="0" cy="0" r="10" />
+                    <circle id="point-9" fill="#3379af" cx="0" cy="0" r="10" />
+                </g>
+            </>
+        )}
+        {isGhostTime && (
+            <>
+                <g id="ghosts" opacity="0">
+                    <g id="ghost-point-1">
+                        <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
+                        <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
+                        <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
+                    </g>
+                    <g id="ghost-point-2">
+                        <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
+                        <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
+                        <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
+                    </g>
+                    <g id="ghost-point-3">
+                        <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
+                        <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
+                        <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
+                    </g>
+                    <g id="ghost-point-4" opacity="0">
+                        <path fill="#275e8a" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
+                        <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
+                        <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
+                    </g>
+                </g>
+
+                <g id="reverse_ghosts" opacity="0">
+                    <g id="ghost-reverse_plane"></g>
+                    <g id="ghost-reverse_point-1" className="ghost-reverse">
+                        <path fill="#3379af" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
+                        <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
+                        <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
+                    </g>
+                    <g id="ghost-reverse_point-2" className="ghost-reverse">
+                        <path fill="#3379af" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
+                        <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
+                        <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
+                    </g>
+                    <g id="ghost-reverse_point-3" className="ghost-reverse">
+                        <path fill="#3379af" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
+                        <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
+                        <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
+                    </g>
+                    <g id="ghost-reverse_point-4" className="ghost-reverse">
+                        <path fill="#3379af" d="M8.25,55.669L8.28,31.951C10.262,11.869 38.257,12.046 40.052,32.084C40.057,32.143 40.056,55.457 40.056,55.457C39.039,58.945 36.855,53.716 34.709,54.116C33.792,54.287 33.201,55.051 32.608,55.867C31.427,57.494 30.621,59.505 29.074,59.197C28.306,59.045 27.317,57.287 26.323,55.803C25.456,54.509 24.037,53.497 23.338,54.301C19.984,58.161 20.683,59.455 18.293,59.104C16.694,58.869 14.968,53.531 13.482,54.047C11.75,54.648 10.659,56.012 9.791,56.533C9.094,56.95 8.479,56.761 8.25,55.669Z"/>
+                        <ellipse fill="00002b" cx="18.216" cy="30.612" rx="3.4" ry="3.4" />
+                        <ellipse fill="00002b" cx="30.216" cy="30.612" rx="3.4" ry="3.4" />
+                    </g>
+                </g>
+            </>
+        )}
 
         <animateMotion xlinkHref="#plane" dur="10s" begin="0.2s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#planePath" />
@@ -154,52 +161,55 @@ const BridgeSvg = ({ raise }) => (
             fill="freeze"
         />
 
-        <animateMotion xlinkHref="#ghost-plane" dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-point-1" dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#ghost-planePath" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-point-1" dur="10s" begin="1s" repeatCount="indefinite" rotate="auto">
-            <mpath xlinkHref="#ghost-planePath" />
-        </animateMotion>
-        <animateMotion xlinkHref="#ghost-point-2" dur="10s" begin="3s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-point-2" dur="10s" begin="2.5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#ghost-planePath" />
         </animateMotion>
         <animateMotion xlinkHref="#ghost-point-3" dur="10s" begin="5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#ghost-planePath" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-point-4" dur="10s" begin="7s" repeatCount="indefinite" rotate="auto">
-            <mpath xlinkHref="#ghost-planePath" />
-        </animateMotion>
-        <animateMotion xlinkHref="#ghost-point-5" dur="10s" begin="9s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-point-4" dur="10s" begin="7.5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#ghost-planePath" />
         </animateMotion>
 
+
         <animate attributeName="opacity"
             xlinkHref="#ghosts"
-            values="0; 1;" dur="1s" begin="10"
+            values="0; 1;" dur="1s" begin="6"
             data-id="ghosts"
             repeatCount="1"
             fill="freeze"
         />
 
-        <animateMotion xlinkHref="#ghost-reverse_plane" dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
+        <animate attributeName="opacity"
+            xlinkHref="#ghost-point-4"
+            values="0; 1;" dur="0.1s" begin="7.5"
+            data-id="ghosts"
+            repeatCount="1"
+            fill="freeze"
+        />
+
+        <animateMotion xlinkHref="#ghost-reverse_point-1" dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reverseGhost-path" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-reverse_point-1" dur="10s" begin="1s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-reverse_point-2" dur="10s" begin="2.5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reverseGhost-path" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-reverse_point-2" dur="10s" begin="3.5s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-reverse_point-3" dur="10s" begin="5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reverseGhost-path" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-reverse_point-3" dur="10s" begin="6s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-reverse_point-4" dur="10s" begin="7.5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reverseGhost-path" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-reverse_point-4" dur="10s" begin="8.5s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-reverse_point-5" dur="10s" begin="10s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reverseGhost-path" />
         </animateMotion>
 
         <animate attributeName="opacity"
             xlinkHref="#reverse_ghosts"
-            values="0; 1;" dur="1s" begin="10"
+            values="0; 1;" dur="1s" begin="6"
             data-id="ghosts"
             repeatCount="1"
             fill="freeze"
