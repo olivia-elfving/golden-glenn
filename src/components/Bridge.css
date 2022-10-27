@@ -39,7 +39,7 @@
     fill: url('#a');
 }
 
-.ghost-reverse {
+.ghost-reverse path, .ghost-reverse ellipse {
     transform: rotate(180deg);
 }
 
