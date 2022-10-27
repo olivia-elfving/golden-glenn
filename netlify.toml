@@ -1,0 +1,4 @@
+[build.environment]
+  PUBLIC_URL=https://www.goldenglenn.se
+[context.deploy-preview.environment]
+  PUBLIC_URL=https://deploy-preview-12--clever-johnson-a520be.netlify.app/
