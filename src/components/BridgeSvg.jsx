@@ -7,8 +7,8 @@ const BridgeSvg = ({ raise }) => (
     xmlns="http://www.w3.org/2000/svg"
     className="bridge"
   >
-    <path id="planePath" d="M4.216,164.771L315.118,151.032L552.311,150.887L867.517,165.712" style={{fill: "none" }} />
-    <path id="reversePath" d="M867.517,165.712,L552.311,150.887,L315.118,151.032,L4.216,164.771" style={{ fill: "none" }} />
+    <path id="planePath" d="M4.216 164.771L315.118 151.032L552.311 150.887L867.517 165.712" style={{fill: "none" }} />
+    <path id="reversePath" d="M867.517 165.712 L552.311 150.887 L315.118 151.032 L4.216,164.771" style={{ fill: "none" }} />
     <g className={`${raise ? "hide" : ""}`} id="reverse_circles" opacity="0">
       <circle id="reverse_plane" fill="#275e8a" cx="0" cy="0" r="10"  />
       <circle id="reverse_point-1" fill="#275e8a" cx="0" cy="0" r="10" />
