@@ -160,16 +160,16 @@ const BridgeSvg = ({ raise, isGhostTime }) => (
             fill="freeze"
         />
 
-        <animateMotion xlinkHref="#ghost-point-1" dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-point-1" dur="9.5s" begin="0s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#ghost-planePath" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-point-2" dur="10s" begin="2.5s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-point-2" dur="10s" begin="3s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#ghost-planePath" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-point-3" dur="10s" begin="5s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-point-3" dur="10s" begin="5.5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#ghost-planePath" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-point-4" dur="10s" begin="7.5s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-point-4" dur="9.5s" begin="7.5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#ghost-planePath" />
         </animateMotion>
 
@@ -190,7 +190,7 @@ const BridgeSvg = ({ raise, isGhostTime }) => (
             fill="freeze"
         />
 
-        <animateMotion xlinkHref="#ghost-reverse_point-1" dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-reverse_point-1" dur="8.8s" begin="0s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reverseGhost-path" />
         </animateMotion>
         <animateMotion xlinkHref="#ghost-reverse_point-2" dur="10s" begin="2.5s" repeatCount="indefinite" rotate="auto">
@@ -202,7 +202,7 @@ const BridgeSvg = ({ raise, isGhostTime }) => (
         <animateMotion xlinkHref="#ghost-reverse_point-4" dur="10s" begin="7.5s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reverseGhost-path" />
         </animateMotion>
-        <animateMotion xlinkHref="#ghost-reverse_point-5" dur="10s" begin="10s" repeatCount="indefinite" rotate="auto">
+        <animateMotion xlinkHref="#ghost-reverse_point-5" dur="8.8s" begin="11s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reverseGhost-path" />
         </animateMotion>
 

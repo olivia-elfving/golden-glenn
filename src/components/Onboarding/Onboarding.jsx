@@ -25,8 +25,8 @@ function Onboarding() {
         <div className="popup">
             <h3>Information</h3>
             <span className="closePopupBtn" onClick={closeOnboarding}>&times;</span>
-            <p>Tiden för "Nästa planerade broöppning" är baserat på ett förutbestämt schema.</p>
-            <p>Tyvärr kan vi inte veta exakt när nästa broöppning är, men du får liveuppdateringar från bron när bat-signalen har ett fast lysande sken.</p>
+            <p>Tyvärr kan vi inte veta när alla broöppningar är på förhand, då vissa öppningar sker utanför det planerade schemat.</p>
+            <p>Du får dock liveuppdateringar om nuvarande brostatus när bat-signalen har ett fast lysande sken.</p>
         </div>
     )
 }
