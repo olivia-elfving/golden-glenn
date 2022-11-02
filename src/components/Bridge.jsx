@@ -57,6 +57,24 @@ function Bridge() {
         setNextTime(nextOpeningTime());
     }, []);
 
+    useEffect(() => {
+        // Backup until webhooks behave better
+        const interval = setInterval(() => {
+            const getBridgeStatus = async () => {
+                try {
+                    const response = await fetch(`https://${serverUrl}`);
+                    const { status } = await response.json();
+                    setStatus(status);
+                }
+                catch(error) {
+                    console.info(error);
+                }
+            }
+            getBridgeStatus();
+        }, 10000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <>
             <WebsocketOnline isOnline={isWsOnline} />
