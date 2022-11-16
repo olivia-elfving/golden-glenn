@@ -1,11 +1,80 @@
 import { isPublicHoliday } from 'swedish-holidays';
 import moment from 'moment';
 
-const times = ["05:35", "09:35", "11.35", "14:35", "18:35", "20:35"];
+const times = [
+    {
+        type: "private",
+        time: "05:35", 
+        weekdays: true,
+        weekends: true 
+    },
+    {
+        type: "private",
+        time: "07:35", 
+        weekdays: false,
+        weekends: true 
+    },
+    {
+        type: "commercial",
+        time: "09:00",
+        endTime: "09:15",
+        weekdays: true,
+        weekends: false
+    },
+    {
+        type: "private",
+        time: "09:35", 
+        weekdays: true,
+        weekends: true 
+    },
+    {
+        type: "private",
+        time: "11:35", 
+        weekdays: true,
+        weekends: true 
+    },
+    {
+        type: "private",
+        time: "14:35", 
+        weekdays: true,
+        weekends: true 
+    },
+    {
+        type: "private",
+        time: "16:35", 
+        weekdays: false,
+        weekends: true 
+    },
+    {
+        type: "commercial",
+        time: "18:00",
+        endTime: "18:15",
+        weekdays: true,
+        weekends: false
+    }, 
+    {
+        type: "private",
+        time: "18:35", 
+        weekdays: true,
+        weekends: true 
+    },
+    {
+        type: "private",
+        time: "20:35", 
+        weekdays: true,
+        weekends: true 
+    }  
+];
 
-function holidayTimes(now) {
+function filterTimes(now) {
     if (isPublicHoliday() || isWeekend(now)) {
-        times.push("07:35", "16:35");
+        return times.filter(obj => {
+            return obj.weekends === true
+        })
+    } else {
+        return times.filter(obj => {
+            return obj.weekdays === true
+        })
     }
 }
 
@@ -16,23 +85,20 @@ function isWeekend(now) {
     return false;
 }
 
-function timeSort() {
-    times.sort();
+function availableTimes(filteredTimes, now) {
+    return filteredTimes.filter(obj => {
+        const time = moment(obj.time, "HH:mm");
+        if (time.isAfter(now)) {
+            return time.format("HH:mm");
+        }
+    })
 }
 
 function nextOpeningTime() {  
     const now = moment();
-    holidayTimes(now);
-    timeSort();
-
-    for (let i = 0; i < times.length; i++) {
-        const time = moment(times[i], "HH:mm");
-        if (time.isAfter(now)) {
-            return time.format("HH:mm");
-        }
-    }
-
-    return times[0];
+    const filteredTimes = filterTimes(now);
+    const availableFutureTimes = availableTimes(filteredTimes, now);
+    return availableFutureTimes[0] || times[0];
 }
 
 export default nextOpeningTime;

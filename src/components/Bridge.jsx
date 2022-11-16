@@ -3,8 +3,8 @@ import useWebSocket from 'react-use-websocket';
 import BridgeSvg from './BridgeSvg';
 import ShipSvg from './ShipSvg';
 import BridgeStatus from './BridgeStatus/BridgeStatus';
-import nextOpeningTime from '../helpers/nextOpeningTime';
 import WebsocketOnline from './WebsocketOnline';
+import OpeningTime from './OpeningTimes/OpeningTimes';
 import Onboarding from './Onboarding/Onboarding';
 import useGhostTime from './useGhostTime';
 import './Bridge.css';
@@ -15,7 +15,6 @@ const websocketUrl = `wss://${serverUrl}`;
 function Bridge() {
     const [isWsOnline, setIsWsOnline] = useState(false);
     const [raise, setRaise] = useState(false);
-    const [nextTime, setNextTime] = useState(null);
     const isGhostTime = useGhostTime();
 
     useWebSocket(websocketUrl, {
@@ -54,7 +53,6 @@ function Bridge() {
             }
         }
         getBridgeStatus();
-        setNextTime(nextOpeningTime());
     }, []);
 
     return (
@@ -65,7 +63,7 @@ function Bridge() {
                 <BridgeSvg raise={raise} isGhostTime={isGhostTime} />
                 <ShipSvg sail={raise} />
             </div>
-            <p className="bridge__label">Nästa planerade broöppning: {nextTime}</p>
+            <OpeningTime />
             <Onboarding />
         </>
     )
