@@ -4,15 +4,15 @@ import moment from 'moment';
 const times = [
     {
         type: "private",
-        time: "05:35", 
+        time: "05:35",
         weekdays: true,
-        weekends: true 
+        weekends: true
     },
     {
         type: "private",
-        time: "07:35", 
+        time: "07:35",
         weekdays: false,
-        weekends: true 
+        weekends: true
     },
     {
         type: "commercial",
@@ -23,21 +23,21 @@ const times = [
     },
     {
         type: "private",
-        time: "09:35", 
+        time: "09:35",
         weekdays: true,
-        weekends: true 
+        weekends: true
     },
     {
         type: "private",
-        time: "11:35", 
+        time: "11:35",
         weekdays: true,
-        weekends: true 
+        weekends: true
     },
     {
         type: "private",
-        time: "14:35", 
+        time: "14:35",
         weekdays: true,
-        weekends: true 
+        weekends: true
     },
     {
         type: "private",
@@ -54,16 +54,16 @@ const times = [
     }, 
     {
         type: "private",
-        time: "18:35", 
+        time: "18:35",
         weekdays: true,
-        weekends: true 
+        weekends: true
     },
     {
         type: "private",
-        time: "20:35", 
+        time: "20:35",
         weekdays: true,
-        weekends: true 
-    }  
+        weekends: true
+    }
 ];
 
 function filterTimes(now) {
@@ -91,6 +91,7 @@ function availableTimes(filteredTimes, now) {
         if (time.isAfter(now)) {
             return time.format("HH:mm");
         }
+        return false;
     })
 }
 
