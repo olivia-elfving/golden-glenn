@@ -96,7 +96,7 @@ function availableTimes(filteredTimes, now) {
 }
 
 function nextTimeWithInTheHour(timeSlot, now) {
-    const _time = moment(timeSlot.time, "HH:mm");
+    const _time = moment(timeSlot?.time, "HH:mm");
     const duration = moment.duration(_time.diff(now));
     const minutes = duration.asMinutes();
     if (minutes < 60) {
