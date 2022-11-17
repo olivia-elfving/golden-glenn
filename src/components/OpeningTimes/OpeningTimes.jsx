@@ -12,7 +12,7 @@ function OpeningTime() {
         return <p className="bridge__label">Nästa planerade broöppning: {nextTime.time}</p>;
     }
     else if (nextTime && nextTime.type === "commercial") {
-        return <p className="bridge__label">Vanlig tid för broöppning: {nextTime.time} - {nextTime.endTime}</p>;
+        return <p className="bridge__label">Vanlig tid för broöppning: {nextTime.startTime} - {nextTime.time}</p>;
     }
     return null;
 }

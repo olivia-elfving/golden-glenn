@@ -16,8 +16,8 @@ const times = [
     },
     {
         type: "commercial",
-        time: "09:00",
-        endTime: "09:15",
+        startTime: "09:00",
+        time: "09:15",
         weekdays: true,
         weekends: false
     },
@@ -47,8 +47,8 @@ const times = [
     },
     {
         type: "commercial",
-        time: "18:00",
-        endTime: "18:15",
+        startTime: "18:00",
+        time: "18:15",
         weekdays: true,
         weekends: false
     }, 
