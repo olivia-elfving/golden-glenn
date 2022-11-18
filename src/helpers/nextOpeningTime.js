@@ -95,12 +95,13 @@ function availableTimes(filteredTimes, now) {
     })
 }
 
-function nextTimeWithInTheHour(timeSlot, now) {
-    const _time = moment(timeSlot?.time, "HH:mm");
-    const duration = moment.duration(_time.diff(now));
+function nextTimeWithInTheHour(nextTimeSlot, comingTimeSlot, now) {
+    const _nextTime = moment(nextTimeSlot?.time, "HH:mm");
+    const _comingTime = moment(comingTimeSlot?.time, "HH:mm");
+    const duration = moment.duration(_comingTime.diff(_nextTime));
     const minutes = duration.asMinutes();
     if (minutes < 60) {
-        return timeSlot;
+        return comingTimeSlot;
     }
     return null;
 }
@@ -109,7 +110,7 @@ function nextOpeningTime() {
     const now = moment();
     const filteredTimes = filterTimes(now);
     const availableFutureTimes = availableTimes(filteredTimes, now);
-    const nextTime = nextTimeWithInTheHour(availableFutureTimes[1], now);
+    const nextTime = nextTimeWithInTheHour(availableFutureTimes[0], availableFutureTimes[1]);
     return [availableFutureTimes[0] || times[0], nextTime];
 }
 

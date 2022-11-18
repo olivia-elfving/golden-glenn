@@ -9,10 +9,10 @@ function OpeningTime() {
     }, []);
 
     const upcomingTime = () => {
-        if (nextTime.length && nextTime[0].type === "private") {
+        if (nextTime.length && nextTime[0] && nextTime[0].type === "private") {
             return <p className="bridge__label">Nästa planerade broöppning: {nextTime[0].time}</p>;
         }
-        else if (nextTime.length && nextTime[0].type === "commercial") {
+        else if (nextTime.length && nextTime[0] && nextTime[0].type === "commercial") {
             return <p className="bridge__label">Vanlig tid för broöppning: {nextTime[0].startTime} - {nextTime[0].time}</p>;
         }
     }
