@@ -95,7 +95,7 @@ function availableTimes(filteredTimes, now) {
     })
 }
 
-function nextTimeWithInTheHour(nextTimeSlot, comingTimeSlot, now) {
+function nextTimeWithInTheHour(nextTimeSlot, comingTimeSlot) {
     const _nextTime = moment(nextTimeSlot?.time, "HH:mm");
     const _comingTime = moment(comingTimeSlot?.time, "HH:mm");
     const duration = moment.duration(_comingTime.diff(_nextTime));
