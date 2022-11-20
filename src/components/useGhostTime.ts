@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function useGhostTime() {
-    const [isGhostTime, setGhostTime] = useState(false);
+    const [isGhostTime, setGhostTime] = useState<boolean>(false);
     
     useEffect(() => {
         const now = new Date();

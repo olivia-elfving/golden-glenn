@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import OpeningTimes from './OpeningTimes';
@@ -9,7 +10,7 @@ describe('Next time component', () => {
 
     test('show next opening when time is 05:00', async () => {
         const time = new Date('20 Aug 2020 05:00:00').getTime();
-        jest.useFakeTimers('modern');
+        jest.useFakeTimers();
         jest.setSystemTime(time);
         render(<OpeningTimes />);
 
@@ -20,7 +21,7 @@ describe('Next time component', () => {
 
     test('show next opening when time is 09:00', async () => {
         const time = new Date('20 Aug 2020 09:00:00').getTime();
-        jest.useFakeTimers('modern');
+        jest.useFakeTimers();
         jest.setSystemTime(time);
         render(<OpeningTimes />);
 
@@ -31,7 +32,7 @@ describe('Next time component', () => {
 
     test('show next opening when time is 09:30', async () => {
         const time = new Date('20 Aug 2020 09:30:00').getTime();
-        jest.useFakeTimers('modern');
+        jest.useFakeTimers();
         jest.setSystemTime(time);
         render(<OpeningTimes />);
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useWebSocket from 'react-use-websocket';
 import BridgeSvg from './BridgeSvg';
 import ShipSvg from './ShipSvg';
@@ -13,8 +13,8 @@ const serverUrl = "golden-horde-webhook.onrender.com/";
 const websocketUrl = `wss://${serverUrl}`;
 
 function Bridge() {
-    const [isWsOnline, setIsWsOnline] = useState(false);
-    const [raise, setRaise] = useState(false);
+    const [isWsOnline, setIsWsOnline] = useState<boolean>(false);
+    const [raise, setRaise] = useState<boolean>(false);
     const isGhostTime = useGhostTime();
 
     useWebSocket(websocketUrl, {
@@ -32,7 +32,7 @@ function Bridge() {
         shouldReconnect: (closeEvent) => true,
     });
 
-    const setStatus = (status) => {
+    const setStatus = (status: string) => {
         if (status === "Open") {
             setRaise(true);
         }
