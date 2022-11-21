@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import './Onboarding.css'
 
 function Onboarding() {
-
-    const [hidePopup, setHidePopup] = useState(false);
+    const [hidePopup, setHidePopup] = useState<boolean>(false);
 
     const closeOnboarding = () => {
         localStorage.setItem("hasOnboarded", "true");

@@ -3,7 +3,12 @@ import './Bridge.css';
 import Cars from './MovingUnits/Cars';
 import Ghosts from './MovingUnits/Ghosts';
 
-const BridgeSvg = ({ raise, isGhostTime }) => (
+interface BridgeSvgInterface {
+    raise: boolean,
+    isGhostTime: boolean
+}
+
+const BridgeSvg = ({ raise, isGhostTime }: BridgeSvgInterface) => (
     <svg
         viewBox="0 0 870 213"
         xmlns="http://www.w3.org/2000/svg"

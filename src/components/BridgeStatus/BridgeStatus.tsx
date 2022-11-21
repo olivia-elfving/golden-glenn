@@ -1,3 +1,4 @@
+import React from 'react';
 import './BridgeStatus.css';
 
 function BridgeStatus({ raise }) {

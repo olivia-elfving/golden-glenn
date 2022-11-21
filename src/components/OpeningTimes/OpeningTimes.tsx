@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import nextOpeningTime from "../../helpers/nextOpeningTime";
+import TimeSlot from "../../types/TimeSlot";
 
-function OpeningTime() {
-    const [nextTime, setNextTime] = useState([]);
+function OpeningTimes(): JSX.Element {
+    const [nextTime, setNextTime] = useState<TimeSlot[]>([]);
 
     useEffect(() => {
         setNextTime(nextOpeningTime());
@@ -32,5 +33,5 @@ function OpeningTime() {
     );
 }
 
-export default OpeningTime;
+export default OpeningTimes;
 
