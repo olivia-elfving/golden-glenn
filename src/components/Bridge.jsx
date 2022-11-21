@@ -3,7 +3,7 @@ import useWebSocket from 'react-use-websocket';
 import BridgeSvg from './BridgeSvg';
 import ShipSvg from './ShipSvg';
 import BridgeStatus from './BridgeStatus/BridgeStatus';
-import WebsocketOnline from './WebsocketOnline';
+import WebsocketOnline from './Websocket/WebsocketOnline';
 import OpeningTime from './OpeningTimes/OpeningTimes';
 import Onboarding from './Onboarding/Onboarding';
 import useGhostTime from './useGhostTime';
