@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import nextOpeningTime from "../../helpers/nextOpeningTime";
+import TimeSlot from "../../types/TimeSlot";
 
 function OpeningTimes(): JSX.Element {
-    const [nextTime, setNextTime] = useState<any>([]);
+    const [nextTime, setNextTime] = useState<(TimeSlot | null)[]>([]);
 
     useEffect(() => {
         setNextTime(nextOpeningTime());
