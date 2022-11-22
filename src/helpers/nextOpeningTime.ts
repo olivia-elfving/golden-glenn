@@ -2,7 +2,7 @@ import { isPublicHoliday } from 'swedish-holidays';
 import moment, { Moment } from 'moment';
 import TimeSlot from '../types/TimeSlot';
 
-const times: TimeSlot[]  = [
+const times: TimeSlot[] = [
     {
         type: "private",
         time: "05:35",
