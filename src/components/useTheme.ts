@@ -30,12 +30,12 @@ function useTheme() {
         */
     }
 
-    const gingerbread = (time) => {
+    /*const gingerbread = (time) => {
         // 13-27 december
         if (time.month === 12 && (time.date >= 13 && time.date <= 27)) {
             setTheme(themes.Gingerbread);
         }
-    }
+    }*/
     
     useEffect(() => {
         const now = new Date();
