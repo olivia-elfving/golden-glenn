@@ -15,7 +15,7 @@ const BridgeSvg = ({ raise, isGhostTime }: BridgeSvgInterface) => (
         xmlns="http://www.w3.org/2000/svg"
         className="bridge"
     >
-        {!isGhostTime && !raise && <Cars />}
+        {!isGhostTime && !raise && false && <Cars />}
         {isGhostTime && !raise && <Ghosts />}
         <BouncingBalls />
 

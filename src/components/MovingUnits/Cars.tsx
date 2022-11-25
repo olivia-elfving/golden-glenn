@@ -67,6 +67,14 @@ const Cars = () => (
             fill="freeze"
         />
 
+        <animate attributeName="opacity"
+            xlinkHref="#circles"
+            values="0; 1;" dur="1s" begin="6"
+            data-id="circles"
+            repeatCount="1"
+            fill="freeze"
+        />
+
         <animateMotion xlinkHref="#reverse_plane" dur="10s" begin="0s" repeatCount="indefinite" rotate="auto">
             <mpath xlinkHref="#reversePath" />
         </animateMotion>
