@@ -6,7 +6,7 @@ import BridgeStatus from './BridgeStatus/BridgeStatus';
 import WebsocketOnline from './Websocket/WebsocketOnline';
 import OpeningTime from './OpeningTimes/OpeningTimes';
 import Onboarding from './Onboarding/Onboarding';
-import useGhostTime from './useGhostTime';
+import useTheme from './useTheme';
 import './Bridge.css';
 
 const serverUrl = "golden-horde-webhook.onrender.com/";
@@ -15,7 +15,7 @@ const websocketUrl = `wss://${serverUrl}`;
 function Bridge() {
     const [isWsOnline, setIsWsOnline] = useState<boolean>(false);
     const [raise, setRaise] = useState<boolean>(false);
-    const isGhostTime = useGhostTime();
+    const theme = useTheme();
 
     useWebSocket(websocketUrl, {
         onOpen: () => {
@@ -78,7 +78,7 @@ function Bridge() {
             <WebsocketOnline isOnline={isWsOnline} />
             <BridgeStatus raise={raise} />
             <div className="bridge__container">    
-                <BridgeSvg raise={raise} isGhostTime={isGhostTime} />
+                <BridgeSvg raise={raise} theme={theme} />
                 <ShipSvg sail={raise} />
             </div>
             <OpeningTime />
