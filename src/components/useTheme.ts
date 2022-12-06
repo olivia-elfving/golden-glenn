@@ -1,12 +1,19 @@
 import { useState, useEffect } from "react";
 import { themes } from "./themes";
 
+interface Time {
+    hour: number,
+    date: number,
+    month: number,
+    weekday: number
+}
+
 function useTheme() {
 
     const [theme, setTheme] = useState<string>(themes.Cars);
     
-    const ghostHour = (time) => {
-        if (time.hour >= 0 && time.hour <= 4) {
+    const ghostHour = (time: Time) => {
+        if ((time.hour >= 0 && time.hour <= 4) || time.hour >= 23) {
             setTheme(themes.Ghosts);
         } else if (time.month === 9 && (time.date === 30 || time.date === 31)) {
             setTheme(themes.Ghosts);
@@ -15,7 +22,7 @@ function useTheme() {
         }
     }
 
-    const bouncing = (time) => {
+    const bouncing = (time: Time) => {
         // 5 is friday
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getDay
         if (time.weekday === 5 && time.hour >= 15) {
@@ -30,12 +37,12 @@ function useTheme() {
         */
     }
 
-    /*const gingerbread = (time) => {
-        // 13-27 december
-        if (time.month === 12 && (time.date >= 13 && time.date <= 27)) {
+    const gingerbread = (time: Time) => {
+        // 13 && 20-27 december
+        if (time.month === 11 && (time.date === 13 || (time.date >= 20 && time.date <= 27))) {
             setTheme(themes.Gingerbread);
         }
-    }*/
+    }
     
     useEffect(() => {
         const now = new Date();
@@ -43,17 +50,16 @@ function useTheme() {
         setInterval(checkTime, 60000);
         
         function checkTime() {
-            const currentTime = {
+            const currentTime: Time = {
                 hour: now.getHours(),
                 date: now.getDate(),
                 month: now.getMonth(),
                 weekday: now.getDay()
             };
 
-            ghostHour(currentTime);
             bouncing(currentTime);
-            //gingerbread(currentTime);
-
+            ghostHour(currentTime);
+            gingerbread(currentTime);
         }
     }, []);
 

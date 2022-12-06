@@ -2,6 +2,7 @@ import React from 'react';
 import './Bridge.css';
 import Cars from './MovingUnits/Cars';
 import Ghosts from './MovingUnits/Ghosts';
+import GingerbreadCookies from './MovingUnits/GingerbreadCookies'
 import BouncingBalls from './MovingUnits/BouncingBalls';
 import { themes } from './themes';
 
@@ -19,6 +20,7 @@ const BridgeSvg = ({ raise, theme }: BridgeSvgInterface) => (
         {theme === themes.Cars && !raise && <Cars />}
         {theme === themes.Ghosts && !raise && <Ghosts />}
         {theme === themes.Bouncing && !raise && <BouncingBalls />}
+        {theme === themes.Gingerbread && !raise && <GingerbreadCookies />}
 
         <g transform="matrix(1,0,0,1,-4.604,-87.985)">
             <path className={`bridge__moving__part ${raise ? "raise" : "lower"}`} d="M331.975,246.823L545.394,246.107L545.394,263.719L331.975,264.435L331.975,246.823Z" fill="#3d8dcc" />
