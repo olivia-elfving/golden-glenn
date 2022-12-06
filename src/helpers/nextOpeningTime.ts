@@ -1,7 +1,8 @@
 import { isPublicHoliday } from 'swedish-holidays';
-import moment from 'moment';
+import moment, { Moment } from 'moment';
+import TimeSlot from '../types/TimeSlot';
 
-const times = [
+const times: TimeSlot[] = [
     {
         type: "private",
         time: "05:35",
@@ -66,7 +67,7 @@ const times = [
     }
 ];
 
-function filterTimes(now) {
+function filterTimes(now: Moment) {
     if (isPublicHoliday() || isWeekend(now)) {
         return times.filter(obj => {
             return obj.weekends === true
@@ -78,14 +79,14 @@ function filterTimes(now) {
     }
 }
 
-function isWeekend(now) {
+function isWeekend(now: Moment) {
     if (now.day() === 6 || now.day() === 0) {
         return true;
     }
     return false;
 }
 
-function availableTimes(filteredTimes, now) {
+function availableTimes(filteredTimes: TimeSlot[], now: Moment) {
     return filteredTimes.filter(obj => {
         const time = moment(obj.time, "HH:mm");
         if (time.isAfter(now)) {
@@ -95,7 +96,7 @@ function availableTimes(filteredTimes, now) {
     })
 }
 
-function nextTimeWithInTheHour(nextTimeSlot, comingTimeSlot) {
+function nextTimeWithInTheHour(nextTimeSlot: TimeSlot, comingTimeSlot: TimeSlot) {
     const _nextTime = moment(nextTimeSlot?.time, "HH:mm");
     const _comingTime = moment(comingTimeSlot?.time, "HH:mm");
     const duration = moment.duration(_comingTime.diff(_nextTime));

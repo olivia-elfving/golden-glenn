@@ -3,6 +3,7 @@ import './Bridge.css';
 import Cars from './MovingUnits/Cars';
 import Ghosts from './MovingUnits/Ghosts';
 import GingerbreadCookies from './MovingUnits/GingerbreadCookies'
+import BouncingBalls from './MovingUnits/BouncingBalls';
 import { themes } from './themes';
 
 interface BridgeSvgInterface {
@@ -16,8 +17,9 @@ const BridgeSvg = ({ raise, theme }: BridgeSvgInterface) => (
         xmlns="http://www.w3.org/2000/svg"
         className="bridge"
     >
-        {theme === themes.Cars && !raise && <Cars />}
+        {!false && theme === themes.Cars && !raise && <Cars />}
         {theme === themes.Ghosts && !raise && <Ghosts />}
+        {theme === themes.Bouncing && !raise && <BouncingBalls />}
         <GingerbreadCookies />
 
         <g transform="matrix(1,0,0,1,-4.604,-87.985)">

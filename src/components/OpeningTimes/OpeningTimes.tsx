@@ -3,7 +3,7 @@ import nextOpeningTime from "../../helpers/nextOpeningTime";
 import TimeSlot from "../../types/TimeSlot";
 
 function OpeningTimes(): JSX.Element {
-    const [nextTime, setNextTime] = useState<TimeSlot[]>([]);
+    const [nextTime, setNextTime] = useState<(TimeSlot | null)[]>([]);
 
     useEffect(() => {
         setNextTime(nextOpeningTime());
