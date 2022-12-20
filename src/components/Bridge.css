@@ -43,6 +43,13 @@
     transform: rotate(180deg);
 }
 
+@-moz-document url-prefix() {
+    #gingerbreads path, #gingerbreads ellipse, #gingerbreads-reverse rect, #gingerbreads-reverse path, #gingerbreads-reverse ellipse {
+        transform: rotate(150deg);
+    }
+}
+
+
 .hide circle {
     fill: none;
 }
