@@ -43,10 +43,6 @@
     transform: rotate(180deg);
 }
 
-#gingerbreads-reverse path, #gingerbreads-reverse ellipse {
-    transform: rotate(180deg);
-}
-
 .hide circle {
     fill: none;
 }

@@ -17,10 +17,10 @@ const BridgeSvg = ({ raise, theme }: BridgeSvgInterface) => (
         xmlns="http://www.w3.org/2000/svg"
         className="bridge"
     >
-        {!false && theme === themes.Cars && !raise && <Cars />}
+        {theme === themes.Cars && !raise && <Cars />}
         {theme === themes.Ghosts && !raise && <Ghosts />}
         {theme === themes.Bouncing && !raise && <BouncingBalls />}
-        <GingerbreadCookies />
+        {theme === themes.Gingerbread && !raise && <GingerbreadCookies />}
 
         <g transform="matrix(1,0,0,1,-4.604,-87.985)">
             <path className={`bridge__moving__part ${raise ? "raise" : "lower"}`} d="M331.975,246.823L545.394,246.107L545.394,263.719L331.975,264.435L331.975,246.823Z" fill="#3d8dcc" />
